@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3-tier App</title>
+</head>
+<body>
+
+<h2>Welcome to our 3-tier App</h2>
+
+<button onclick="fetchData()">Get Data</button>
+
+<p id="dataOutput">Data will appear here...</p>
+
+<script>
+    function fetchData() {
+        fetch('/data')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('dataOutput').textContent = data.message;
+        });
+    }
+</script>
+
+</body>
+</html>
+
